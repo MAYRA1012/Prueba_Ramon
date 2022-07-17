@@ -1,0 +1,49 @@
+# import modules
+import RPi.GPIO as GPIO
+import time
+
+# Paso 2
+GPIO.setmode(GPIO.BCM)
+
+#PASO3
+
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(27, GPIO.OUT)
+GPIO.setup(22, GPIO.OUT)
+
+
+# Programa
+
+try:
+  while True:
+    print (" Led 1 Apagado")
+    GPIO.output(17,GPIO.LOW)
+    time.sleep(1)
+    print ("Led 1 Encendido")
+    GPIO.output(17,GPIO.HIGH)
+    time.sleep(2.5)
+    
+    print (" Led 2 Apagado")
+    GPIO.output(27,GPIO.LOW)
+    time.sleep(1.5)
+    print ("Led 2 Encendido")
+    GPIO.output(27,GPIO.HIGH)
+    time.sleep(1.5)
+    print (" Led 2 Apagado")
+    GPIO.output(27,GPIO.LOW)
+    time.sleep(0.5)
+    
+    print (" Led 3 Apagado")
+    GPIO.output(22,GPIO.LOW)
+    time.sleep(2)
+    print ("Led 3 Encendido")
+    GPIO.output(22,GPIO.HIGH)
+    time.sleep(0.5)
+    print (" Led 3 Apagado")
+    GPIO.output(22,GPIO.LOW)
+    time.sleep(1)     
+    
+except keyboardInterrupt:
+       print ("finalizado por el Usuario.....")
+       GPIO.cleanup()
+      
